@@ -1,0 +1,51 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.15/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.15",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "packageName": "apps.teams.jeysongarcia",
+    "developer": {
+        "name": "Jeyson Andres Garcia Rodriguez",
+        "websiteUrl": "${{TAB_ENDPOINT}}",
+        "privacyUrl": "${{TAB_ENDPOINT}}/index.html#/privacy",
+        "termsOfUseUrl": "${{TAB_ENDPOINT}}/index.html#/termsofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Azure DevOps KMS (${{TEAMSFX_ENV}})",
+        "full": "Knowledge Management System from Azure DevOps"
+    },
+    "description": {
+        "short": "Azure DevOps : Tácito a explícito",
+        "full": "Obtiene el conocimiento tácito generado al documentar los proyectos dentro de una organización en Azure DevOps y los transforma en conocimiento explícito habilitando una consulta y una visualización más amigable"
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [],
+    "composeExtensions": [],
+    "configurableTabs": [],
+    "staticTabs": [
+        {
+            "entityId": "index",
+            "name": "📌 Consulta",
+            "contentUrl": "${{TAB_ENDPOINT}}/index.html#/tab",
+            "websiteUrl": "${{TAB_ENDPOINT}}/index.html#/tab",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "${{TAB_DOMAIN}}"
+    ],
+    "webApplicationInfo": {
+        "id": "${{AAD_APP_CLIENT_ID}}",
+        "resource": "api://${{TAB_DOMAIN}}/${{AAD_APP_CLIENT_ID}}"
+    }
+}
